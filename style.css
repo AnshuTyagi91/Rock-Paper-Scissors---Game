@@ -1,0 +1,152 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  padding: 1rem;
+}
+
+h1 {
+  background-color: #081b31;
+  color: #fff;
+  height: 5rem;
+  line-height: 5rem;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  margin-bottom: 2rem;
+  border-radius: 0 0 20px 20px;
+}
+
+.choices {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(1rem, 5vw, 3rem);
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.choice {
+  height: clamp(120px, 25vw, 165px);
+  width: clamp(120px, 25vw, 165px);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 4px solid #fff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.choice:hover {
+  background-color: #081b31;
+  transform: scale(1.1);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+}
+
+img {
+  height: 85%;
+  width: 85%;
+  object-fit: cover;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.score-board {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: clamp(1.2rem, 3vw, 2rem);
+  margin: 2rem 0;
+  gap: clamp(2rem, 8vw, 5rem);
+  flex-wrap: wrap;
+}
+
+.score {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1rem 2rem;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+#user-score,
+#comp-score {
+  font-size: clamp(2rem, 6vw, 4rem);
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.msg-container {
+  margin: 2rem 0;
+}
+
+#msg {
+  background-color: #081b31;
+  color: #fff;
+  font-size: clamp(1.4rem, 4vw, 2rem);
+  display: inline-block;
+  padding: 1.5rem 2rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  min-width: 280px;
+  transition: all 0.3s ease;
+}
+
+/* Tablet Styles */
+@media (max-width: 768px) {
+  .choices {
+    gap: 2rem;
+  }
+
+  .score-board {
+    gap: 3rem;
+  }
+}
+
+/* Mobile Styles */
+@media (max-width: 480px) {
+  body {
+    padding: 0.5rem;
+  }
+
+  h1 {
+    height: 4rem;
+    line-height: 4rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .choices {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .choice {
+    height: 140px;
+    width: 140px;
+  }
+
+  .score-board {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .score {
+    padding: 1.5rem;
+  }
+}
+
+/* Extra Small Mobile */
+@media (max-width: 360px) {
+  .choice {
+    height: 120px;
+    width: 120px;
+  }
+}
